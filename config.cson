@@ -1,0 +1,42 @@
+"*":
+  "autoclose-html": {}
+  core:
+    disabledPackages: [
+      "autoclose-html"
+    ]
+    ignoredNames: [
+      ".git"
+      "node_modules"
+      "**/dist/*"
+      "**/assets/*"
+    ]
+    themes: [
+      "one-dark-ui"
+      "solarized-dark-syntax"
+    ]
+  editor:
+    fontSize: 13
+    invisibles: {}
+    showIndentGuide: true
+  emmet: {}
+  "exception-reporting":
+    userId: "c5841451-1725-157d-7014-a681f043bc98"
+  "highlight-selected": {}
+  "linter-pylint":
+    rcFile: "~/.pylintrc"
+  "linter-python": {}
+  minimap:
+    absoluteMode: true
+    displayCodeHighlights: false
+    plugins:
+      "find-and-replace": true
+      "find-and-replaceDecorationsZIndex": 0
+      "git-diff": true
+      "git-diffDecorationsZIndex": 0
+      "highlight-selected": true
+      "highlight-selectedDecorationsZIndex": 0
+      linter: true
+      linterDecorationsZIndex: 0
+  "node-debugger": {}
+  welcome:
+    showOnStartup: false
