@@ -1,8 +1,13 @@
 "*":
   "autoclose-html": {}
+  "autocomplete-python":
+    pythonPaths: "/usr/local/bin/python3"
+    useKite: false
   core:
     disabledPackages: [
       "autoclose-html"
+      "atom-python-run"
+      "emmet"
     ]
     ignoredNames: [
       ".git"
@@ -10,6 +15,10 @@
       "**/dist/*"
       "**/assets/*"
     ]
+    packagesWithKeymapsDisabled: [
+      "jslint"
+    ]
+    telemetryConsent: "limited"
     themes: [
       "one-dark-ui"
       "solarized-dark-syntax"
@@ -22,6 +31,10 @@
   "exception-reporting":
     userId: "c5841451-1725-157d-7014-a681f043bc98"
   "highlight-selected": {}
+  jslint:
+    hideOnNoErrors: true
+  linter:
+    errorPanelHeight: 25
   "linter-pylint":
     rcFile: "~/.pylintrc"
   "linter-python": {}
@@ -38,5 +51,19 @@
       linter: true
       linterDecorationsZIndex: 0
   "node-debugger": {}
+  "python-debugger":
+    pythonExecutable: "/usr/local/bin/python3"
+  "split-diff":
+    diffWords: true
+    ignoreWhitespace: true
+    leftEditorColor: "red"
+    rightEditorColor: "green"
+    syncHorizontalScroll: true
+  "tree-view":
+    hideVcsIgnoredFiles: true
+  "vim-mode": {}
   welcome:
     showOnStartup: false
+".source.tsx":
+  editor:
+    tabLength: 4

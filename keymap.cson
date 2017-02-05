@@ -17,9 +17,13 @@
   'alt-k': 'window:focus-pane-below'
   'alt-l': 'window:focus-pane-on-right'
   'alt-i': 'window:focus-pane-above'
+  'cmd-j': 'unset'
+  'cmd-l': 'unset'
 'body':
   'alt-[': 'pane:show-previous-item'
   'alt-]': 'pane:show-next-item'
+  'cmd-{': 'unset'
+  'cmd-}': 'unset'
 #
 # 'atom-workspace':
 #   'ctrl-shift-p': 'core:move-up'
