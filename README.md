@@ -16,9 +16,13 @@ my atom customized key bind
 my atom customized sytle sheet
 the selection of code will be more clear for solarized theme
 
-##vim
+## vim
 - **vimrc**<br>
 my vim config file
 change the `vimrc.bak` to `.vimrc` and place it in your user directory
 
-test
+## Shadowrocket
+- **shadowrocket-usa.conf**<br>
+Still testing
+A config file for people living in USA
+Mainly for unblocking Netease Music and Bilibili
