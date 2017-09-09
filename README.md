@@ -16,7 +16,7 @@ my atom customized key bind
 - **sytle.less**<br>
 my atom customized sytle sheet
 
-the selection of code will be more clear for solarized theme
+the selection area will be more clear while not conflicting with most themes
 
 ## vim
 - **vimrc**<br>
@@ -25,8 +25,6 @@ change the `vimrc.bak` to `.vimrc` and place it in your user directory
 
 ## Shadowrocket
 - **shadowrocket-usa.conf**<br>
-Still testing
-
-A config file for people living in USA
-
-Mainly for unblocking Netease Music and Bilibili
+Still testing<br>
+A config file for people living in USA<br>
+Mainly for unblocking Netease Music and Bilibili<br>
