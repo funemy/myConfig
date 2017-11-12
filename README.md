@@ -19,9 +19,10 @@ my atom customized sytle sheet
 the selection area will be more clear while not conflicting with most themes
 
 ## vim
-- **vimrc**<br>
-my vim config file
-change the `vimrc.bak` to `.vimrc` and place it in your user directory
+- **init.vim**<br>
+switch from vim to neovim
+place `init.vim` at `~/.config/neovim`
+using `vim-plug` to manage plugin
 
 ## Shadowrocket
 - **shadowrocket-usa.conf**<br>
