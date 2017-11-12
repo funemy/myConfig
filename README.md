@@ -21,7 +21,9 @@ the selection area will be more clear while not conflicting with most themes
 ## vim
 - **init.vim**<br>
 switch from vim to neovim
+
 place `init.vim` at `~/.config/neovim`
+
 using `vim-plug` to manage plugin
 
 ## Shadowrocket
