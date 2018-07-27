@@ -1,7 +1,7 @@
 " plugin
 call plug#begin()
 
-Plug 'https://github.com/klen/python-mode'
+Plug 'https://github.com/klen/python-mode', { 'branch': 'develop'}
 Plug 'bling/vim-airline'
 Plug 'lifepillar/vim-solarized8'
 Plug 'morhetz/gruvbox'
@@ -19,6 +19,7 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'eagletmt/neco-ghc'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'neovimhaskell/haskell-vim'
+Plug 'zchee/deoplete-clang'
 " requirement for ghcmod-vim
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'eagletmt/ghcmod-vim'
@@ -30,10 +31,10 @@ call plug#end()            " required
 language en_US
 
 " global/unknown
+filetype off                  " required
 filetype plugin indent on    " required
 syntax on                      "语法支持
 syntax enable
-filetype off                  " required
 
 " color scheme
 set background=dark
@@ -155,6 +156,10 @@ let g:deoplete#ignore_sources = {}
 let g:deoplete#ignore_sources.ocaml = ['buffer', 'around', 'member', 'tag']
 let g:deoplete#auto_complete_delay = 0
 
+" clang
+let g:deoplete#sources#clang#libclang_path = '/usr/local/opt/llvm/lib/libclang.dylib'
+let g:deoplete#sources#clang#libclang_header = '/usr/local/opt/llvm/lib/clang'
+
 " deoplete javascript
 " Set bin if you have many instalations
 " let g:deoplete#sources#ternjs#tern_bin = '/path/to/tern_bin'
@@ -211,3 +216,4 @@ execute "set rtp+=" . g:opamshare . "/merlin/vim"
 
 "Add extra filetypes
 " let g:deoplete#sources#ternjs#filetypes = [ 'jsx', 'javascript.jsx', 'vue', '...' ]
+"
