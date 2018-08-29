@@ -7,7 +7,7 @@ Plug 'lifepillar/vim-solarized8'
 Plug 'morhetz/gruvbox'
 Plug 'scrooloose/nerdtree'
 Plug 'mattn/emmet-vim'
-Plug 'scrooloose/syntastic'
+"Plug 'scrooloose/syntastic'
 Plug 'majutsushi/tagbar'
 Plug 'easymotion/vim-easymotion'
 Plug 'scrooloose/nerdcommenter'
@@ -76,14 +76,14 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
 "syntastic config
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
 
 "tagbar config
 nmap <F8> :TagbarToggle<CR>
@@ -100,10 +100,14 @@ map <leader>t :NERDTreeToggle<CR>
 "disable the completion on dot funtion
 "due to the conflict with YCM
 "let g:pymode_rope_complete_on_dot = 0
+let g:python3_host_prog='python3'
 let g:pymode_rope=0
 let g:pymode_python='python3'
 " unabled python-mode auto folding
 let g:pymode_folding=0
+let g:pymode_lint_checkers=['pyflakes']
+let g:pymode_lint=1
+let g:pymode_lint_on_write=1
 
 " nerd commenter
 " Add spaces after comment delimiters by default
