@@ -19,8 +19,14 @@ my atom customized sytle sheet
 the selection area will be more clear while not conflicting with most themes
 
 ## vim
-- **init.vim**<br>
-switch from vim to neovim
+- **init.vim**
+- **.vimrc**
+
+use `init.vim` for neovim and `.vimrc` for vim(>8)
+the `.vimrc` is very light-weighted and only support python
+since I found now I only use terminal vim for some small python script.
+
+I switch back from neovim to vim because vim8 now is working just fine, and deoplete is not working properly, so I replace it with completor.
 
 place `init.vim` at `~/.config/neovim`
 
