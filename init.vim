@@ -18,6 +18,7 @@ Plug 'kchmck/vim-coffee-script'
 Plug 'vim-ruby/vim-ruby'
 Plug 'eagletmt/neco-ghc'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'zchee/deoplete-jedi'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'zchee/deoplete-clang'
 " requirement for ghcmod-vim
@@ -70,6 +71,12 @@ set incsearch
 set hlsearch
 set ignorecase
 set smartcase
+"" clear search hightlight when press esc
+nnoremap <esc> :noh<return><esc>
+
+highlight Pmenu ctermbg=8 guibg=#606060
+highlight PmenuSel ctermbg=1 guifg=#dddd00 guibg=#1f82cd
+highlight PmenuSbar ctermbg=0 guibg=#d6d6d6
 
 " arline config
 let g:airline_powerline_fonts = 1
@@ -102,10 +109,10 @@ map <leader>t :NERDTreeToggle<CR>
 "let g:pymode_rope_complete_on_dot = 0
 let g:python3_host_prog='python3'
 let g:pymode_rope=0
-let g:pymode_python='python3'
+" let g:pymode_python='python3'
 " unabled python-mode auto folding
 let g:pymode_folding=0
-let g:pymode_lint_checkers=['pyflakes']
+let g:pymode_lint_checkers=['pylama']
 let g:pymode_lint=1
 let g:pymode_lint_on_write=1
 
@@ -139,15 +146,7 @@ nmap <Leader>l <Plug>(easymotion-overwin-line)
 map  <Leader>w <Plug>(easymotion-bd-w)
 nmap <Leader>w <Plug>(easymotion-overwin-w)
 
-" traverse autocompletion by <TAB>
-inoremap <silent><expr> <TAB>
-    \ pumvisible() ? "\<C-n>" :
-    \ <SID>check_back_space() ? "\<TAB>" :
-    \ deoplete#mappings#manual_complete()
-function! s:check_back_space() abort "{{{
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~ '\s'
-endfunction"}}}
+
 
 " Disable haskell-vim omnifunc
 let g:haskellmode_completion_ghc = 0
@@ -155,14 +154,23 @@ autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 
 " deoplete
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#complete_method = "complete"
+let g:deoplete#complete_method = "omnifunc"
 let g:deoplete#ignore_sources = {}
-let g:deoplete#ignore_sources.ocaml = ['buffer', 'around', 'member', 'tag']
+" let g:deoplete#ignore_sources.ocaml = ['buffer', 'around', 'member', 'tag']
 let g:deoplete#auto_complete_delay = 0
+
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+    return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
+endfunction
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " clang
 let g:deoplete#sources#clang#libclang_path = '/usr/local/opt/llvm/lib/libclang.dylib'
 let g:deoplete#sources#clang#libclang_header = '/usr/local/opt/llvm/lib/clang'
+
+" python
+let g:deoplete#sources#jedi#python_path = 'python'
 
 " deoplete javascript
 " Set bin if you have many instalations
@@ -214,9 +222,20 @@ let g:deoplete#sources#ternjs#include_keywords = 1
 " If completions should be returned when inside a literal. Default: 1
 let g:deoplete#sources#ternjs#in_literal = 0
 
+" traverse autocompletion by <TAB>
+" inoremap <silent><expr> <TAB>
+" \ pumvisible() ? "\<C-n>" :
+" \ <SID>check_back_space() ? "\<TAB>" :
+" \ deoplete#mappings#manual_complete()
+" function! s:check_back_space() abort "{{{
+" let col = col('.') - 1
+" return !col || getline('.')[col - 1]  =~ '\s'
+" endfunction"}}}
+
+
 " ocaml merlin
-let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
-execute "set rtp+=" . g:opamshare . "/merlin/vim"
+" let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
+" execute 'set rtp+=' . g:opamshare . '/merlin/vim'
 
 "Add extra filetypes
 " let g:deoplete#sources#ternjs#filetypes = [ 'jsx', 'javascript.jsx', 'vue', '...' ]
