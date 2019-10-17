@@ -66,7 +66,10 @@ source $ZSH/oh-my-zsh.sh
 
 # make terminal support true color and italic
 export TERM=xterm-24bit
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:$HOME/.cargo/bin"
+# export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:$HOME/.cargo/bin"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
+
+export LC_ALL=en_US.UTF-8
 
 # You may need to manually set your language environment
 #
@@ -88,6 +91,11 @@ alias gm='git merge'
 alias git-change-commit='sh ~/.config/github/change-commit-user.sh'
 
 alias ssh="TERM=xterm-256color ssh"
+
+# replace some default tools
+alias diff="icdiff"
+alias ls="exa"
+alias cat="bat"
 
 # alias di='docker images'
 # alias dr='docker run -ti'
@@ -140,9 +148,11 @@ alias antlr4='java -jar /usr/local/lib/javalib/antlr-4.5-complete.jar'
 alias grun='java org.antlr.v4.runtime.misc.TestRig'
 
 # java home path set
-# export JAVA_HOME="$(/usr/libexec/java_home -v 1.6)"
 # export JAVA_HOME="$(/usr/libexec/java_home -v 1.7)"
 export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
+# export JAVA_HOME="$(/usr/libexec/java_home -v 10)"
+# export JAVA_HOME="$(/usr/libexec/java_home -v 11)"
+# export JAVA_HOME="$(/usr/libexec/java_home -v 12)"
 
 
 # add rust
@@ -156,10 +166,25 @@ export PATH="/usr/local/opt/llvm/bin:$PATH"
 # direnv setup
 eval "$(direnv hook zsh)"
 
-#go lang setting
+# go lang setting
 export GOPATH=$HOME/.go
 export PATH=$GOPATH/bin:$PATH
+
+# SML
+export PATH="$PATH:/usr/local/smlnj/bin"
+
+# fuzzy find
+alias fopen='vim $(fzf --height 40%)'
+
+# python virtual env
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/Devel
+export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
+source /usr/local/bin/virtualenvwrapper_lazy.sh
+
 
 # NOTE
 # for profiling
 # zprof
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
