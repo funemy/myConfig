@@ -66,15 +66,14 @@ source $ZSH/oh-my-zsh.sh
 
 # make terminal support true color and italic
 export TERM=xterm-24bit
-# export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:$HOME/.cargo/bin"
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
 
 export LC_ALL=en_US.UTF-8
 
 # You may need to manually set your language environment
 #
 # alias for python
-alias py="python3"
+alias py3="python3"
+alias py2="python2"
 
 # alias for git
 alias ga='git add'
@@ -100,10 +99,13 @@ alias cat="bat"
 # alias di='docker images'
 # alias dr='docker run -ti'
 # alias docker-init="source /Applications/Docker/Docker\ Quickstart\ Terminal.app/Contents/Resources/Scripts/start.sh"
-# alias cnpm='npm --registry=http://registry.npm.taobao.org'
 
-#haskell
-#stack
+# python
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+
+
+# haskell
+# stack
 export PATH="$HOME/.local/bin:$PATH"
 
 #rbenv
@@ -140,7 +142,7 @@ npm() {
 }
 
 #latex
-export PATH="/Library/Tex/texbin:$PATH"
+# export PATH="/Library/Tex/texbin:$PATH"
 
 #antlr lib for csce689
 # export CLASSPATH="/usr/local/lib/javalib/antlr-4.5-complete.jar:$CLASSPATH"
