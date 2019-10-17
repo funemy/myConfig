@@ -1,12 +1,5 @@
 This is a list of configurations in my own computer
 
-## Mac
-
-- **MyABC.keylayout** <br>
-a clean key layout without dog fucked Latin characters
-
-*sadly this layout can no longer be used in macOS 10.12*
-
 ## Atom
 
 - **config.cson**<br>
@@ -32,8 +25,11 @@ place `init.vim` at `~/.config/neovim`
 
 using `vim-plug` to manage plugin
 
-## Shadowrocket
-- **shadowrocket-usa.conf**<br>
-Still testing<br>
-A config file for people living in USA<br>
-Mainly for unblocking Netease Music and Bilibili<br>
+## ZSH
+- **.zshrc**
+
+Some alias for git command (the oh-my-zsh git plugin is a little bit uncomfortable for me)
+
+Lazy loading for NVM (to reduce startup time)
+
+Some other regular configs for OCaml/Java/Rust/...
