@@ -156,6 +156,8 @@ export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
 # export JAVA_HOME="$(/usr/libexec/java_home -v 11)"
 # export JAVA_HOME="$(/usr/libexec/java_home -v 12)"
 
+export PATH="$JAVA_HOME/bin:$PATH"
+
 
 # add rust
 source $HOME/.cargo/env
@@ -184,6 +186,10 @@ export PROJECT_HOME=$HOME/Devel
 export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
 source /usr/local/bin/virtualenvwrapper_lazy.sh
 
+# binutils
+export PATH="/usr/local/opt/binutils/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/binutils/lib"
+export CPPFLAGS="-I/usr/local/opt/binutils/include"
 
 # NOTE
 # for profiling
