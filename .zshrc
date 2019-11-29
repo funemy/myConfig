@@ -96,10 +96,6 @@ alias diff="icdiff"
 alias ls="exa"
 alias cat="bat"
 
-# alias di='docker images'
-# alias dr='docker run -ti'
-# alias docker-init="source /Applications/Docker/Docker\ Quickstart\ Terminal.app/Contents/Resources/Scripts/start.sh"
-
 # python
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
@@ -190,6 +186,8 @@ source /usr/local/bin/virtualenvwrapper_lazy.sh
 export PATH="/usr/local/opt/binutils/bin:$PATH"
 export LDFLAGS="-L/usr/local/opt/binutils/lib"
 export CPPFLAGS="-I/usr/local/opt/binutils/include"
+
+alias crace='java -jar /Users/liyanze/java/projects/crappie/crappie-engine/build/libs/crappie-engine-all.jar'
 
 # NOTE
 # for profiling
