@@ -1,10 +1,10 @@
 " plugin
 call plug#begin()
-Plug 'morhetz/gruvbox'
+Plug 'gruvbox-material/vim', {'as': 'gruvbox-material'}
 Plug 'scrooloose/nerdcommenter'
-Plug 'itchyny/lightline.vim'
-Plug 'maralla/completor.vim'
-Plug 'python-mode/python-mode', { 'branch': 'develop' }
+" Plug 'itchyny/lightline.vim'
+" Plug 'maralla/completor.vim'
+" Plug 'python-mode/python-mode', { 'branch': 'develop' }
 Plug 'scrooloose/nerdtree'
 call plug#end()            " required
 
@@ -15,10 +15,12 @@ let mapleader=" "
 language en_US
 
 " color scheme
+set termguicolors
 set background=dark
-" colorscheme solarized8
-colorscheme gruvbox
-let g:gruvbox_termcolors=16
+let g:gruvbox_material_background='hard'
+" disable italic comment
+let g:gruvbox_material_disable_italic_comment = 1
+colorscheme gruvbox-material
 
 " global/unknown
 filetype off                  " required
@@ -40,16 +42,15 @@ set backspace=indent,eol,start
 
 " ui
 set hidden
-set number " show line number
+set number "show line number
 set showcmd
 set cursorline
 set cursorcolumn
-set wildmenu " visual autocomplete for command menu
-set showmatch " hightlight match brace
+set wildmenu "visual autocomplete for command menu
+set showmatch "hightlight match brace
 set nobackup
 set noswapfile
 set selectmode=mouse,key
-set termguicolors
 set completeopt="menuone" "autocomplete ui
 set noshowmode
 
@@ -65,7 +66,7 @@ set ignorecase
 set smartcase
 
 " light line
-set laststatus=2
+" set laststatus=2
 
 " nerd commenter
 " Add spaces after comment delimiters by default
@@ -84,18 +85,18 @@ let g:NERDCommentEmptyLines = 1
 let g:NERDTrimTrailingWhitespace = 1
 
 " completer
-let g:completor_completion_delay = 20
-let g:completor_python_binary = "/usr/local/bin/python3"
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <expr> <cr> pumvisible() ? "\<C-y>\<cr>" : "\<cr>"
-let g:completor_complete_options = 'menuone,noselect'
+" let g:completor_completion_delay = 20
+" let g:completor_python_binary = "/usr/local/bin/python3"
+" inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" inoremap <expr> <cr> pumvisible() ? "\<C-y>\<cr>" : "\<cr>"
+" let g:completor_complete_options = 'menuone,noselect'
 
 " pymode
-let g:pymode_python = 'python3'
-let g:pymode_rope_completion = 1
-let g:pymode_rope=0
-let g:pymode_folding=0
+" let g:pymode_python = 'python3'
+" let g:pymode_rope_completion = 1
+" let g:pymode_rope=0
+" let g:pymode_folding=0
 
 "NERDTree config
 "autocmd vimenter * NERDTree "
